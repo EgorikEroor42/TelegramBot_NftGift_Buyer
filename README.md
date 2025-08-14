@@ -1,26 +1,26 @@
 # 1.TelegramBotForBuyingNewNftGifts
-# 1.Данные которые нужно заполнить:
-1.File: impo.b_st_me.py Line: 9 - Токен бота Telegram.
+# 1. Data to be filled in:
+File: impo.b_st_me.py Line: 9 – Telegram bot token.
 
-2.File: impo.b_s.py Line: 25 - Порт Redis,Название бд.
+File: impo.b_s.py Line: 25 – Redis port, database name.
 
-3.File: impo.u_db.py Line: 4 - Пароль PosterSQL,localhost,Название бд. 
+File: impo.u_db.py Line: 4 – PostgreSQL password, localhost, database name.
 
-4.File: impo.u_db.py Line: 48 - Пароль PosterSQL,localhost,Название бд. 
+File: impo.u_db.py Line: 48 – PostgreSQL password, localhost, database name.
 
-# 2.Принцип работы каждого файла:
-1.File: impo.u_db.py - Создаём 2 движка PosterSQL синхронный и асинхронный, синхронный создаёт 1 раз все таблицы при первом запуске кода, асинхронный используется для всех асинхронных запросов.
+# 2. How each file works:
+File: impo.u_db.py – Creates two PostgreSQL engines: synchronous and asynchronous. The synchronous one creates all tables once on the first code run. The asynchronous one is used for all async queries.
 
-2.File: impo.b_st_me.py - Роутер реагирует на команду /start создаёт нового пользователя в таблицу Users с настройками по умолчанию если его не существует, и записывает в ключ redis язык настроек Telegram пользователя.
+File: impo.b_st_me.py – The router reacts to the /start command, creates a new user in the Users table with default settings if they don’t exist, and stores the user’s Telegram language setting in a Redis key.
 
-3.File: impo.b_s.py - Скрипт для запуска бота.
+File: impo.b_s.py – Script for launching the bot.
 
-4.File: impo.b_g.py - Фоновая задача которая проверяет наличие новых NFT-подарков если NFT-подарки появились, достаёт из бд всех пользователей которые пополняли баланс сортирует по убыванию баланса после этого проходится по каждому профилю пользователя и покупает NFT-подарки если они подходят по условиям настройки профиля.
+File: impo.b_g.py – Background task that checks for new NFT gifts. If new NFT gifts appear, it retrieves from the database all users who have topped up their balance, sorts them in descending order by balance, then iterates through each user profile and buys NFT gifts if they match the profile’s settings.
 
-5.File: impo.b_dict.py - Все сообщения и кнопки на 3 языках английский,русский и украинский.
+File: impo.b_dict.py – All messages and buttons in three languages: English, Russian, and Ukrainian.
 
-6.File: cho.b_list_prof.py - Создаёт кнопки с краткой характеристикой каждого профиля пользователя.
+File: cho.b_list_prof.py – Creates buttons with a brief description of each user profile.
 
-7.File: cho.b_hist_py.py - Создаёт кнопки с краткой характеристикой каждой покупки пользователя.
+File: cho.b_hist_py.py – Creates buttons with a brief description of each user purchase.
 
-8.File: cho.b_call.py - Все callback - создание профиля,список профилей пользователя,смена статуса профиля,смена от какого количества скупать NFT-подарки,смена до какого количества скупать NFT-подарки,смена от какой цены скупать NFT-подарки,смена до какой цены скупать NFT-подарки,пополнение баланса профиля,удаление профиля,выйти с профиля,пополнение баланса пользователя,подробная информация о покупке пользователя,реферальная ссылка пользователя и сообщение о реферальной системе,смена языка,логика кнопки назад.
+File: cho.b_call.py – All callbacks: profile creation, user profile list, changing profile status, changing the minimum quantity for NFT gift purchases, changing the maximum quantity for NFT gift purchases, changing the minimum price for NFT gift purchases, changing the maximum price for NFT gift purchases, topping up profile balance, deleting a profile, exiting a profile, topping up the user balance, detailed purchase information, user referral link and referral system message, changing language, and the logic for the “back” button.
