@@ -1,5 +1,5 @@
 from zoneinfo import ZoneInfo
-from aiogram.types.gifts import Gifts,Gift
+from aiogram.types.gifts import Gifts
 from impo.b_st_me import bot
 from aiogram.methods import SendGift
 from impo.u_db import User,Session,ProfileSettings,UserPurchases
@@ -84,4 +84,5 @@ async def check_gift_list():
                 elif time in [16, 17, 18, 19, 20]:
                     await asyncio.sleep(3)
                 else:
+
                     await asyncio.sleep(5)
