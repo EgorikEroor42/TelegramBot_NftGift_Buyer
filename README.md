@@ -8,6 +8,8 @@ File: impo.u_db.py Line: 4 – PostgreSQL password, localhost, database name.
 
 File: impo.u_db.py Line: 48 – PostgreSQL password, localhost, database name.
 
+File: impo.api_info.py - Write in terminal: uvicorn impo.api_info:ai --reload --reload-dir .
+
 # 2. How each file works:
 File: impo.u_db.py – Creates two PostgreSQL engines: synchronous and asynchronous. The synchronous one creates all tables once on the first code run. The asynchronous one is used for all async queries.
 
@@ -18,6 +20,8 @@ File: impo.b_s.py – Script for launching the bot.
 File: impo.b_g.py – Background task that checks for new NFT gifts. If new NFT gifts appear, it retrieves from the database all users who have topped up their balance, sorts them in descending order by balance, then iterates through each user profile and buys NFT gifts if they match the profile’s settings.
 
 File: impo.b_dict.py – All messages and buttons in three languages: English, Russian, and Ukrainian.
+
+File: impo.api_info.py - Getting information from database via FastiAPI.
 
 File: cho.b_list_prof.py – Creates buttons with a brief description of each user profile.
 
