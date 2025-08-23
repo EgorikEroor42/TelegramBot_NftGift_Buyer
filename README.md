@@ -8,7 +8,7 @@ File: impo.u_db.py Line: 4 – PostgreSQL password, localhost, database name.
 
 File: impo.u_db.py Line: 48 – PostgreSQL password, localhost, database name.
 
-File: impo.api_info.py - Write in terminal: uvicorn impo.api_info:ai --reload --reload-dir .
+File: impo.api_info.py - Write in terminal: uvicorn api_info:ai --host 0.0.0.0 --port 8000 (Not necessary, only if you need fast work with database)
 
 # 2. How each file works:
 File: impo.u_db.py – Creates two PostgreSQL engines: synchronous and asynchronous. The synchronous one creates all tables once on the first code run. The asynchronous one is used for all async queries.
@@ -33,4 +33,4 @@ File: cho.b_call.py – All callbacks: profile creation, user profile list, chan
 
 1. Run impo.b_s.py
 
-2. Write in terminal: uvicorn impo.api_info:ai --reload --reload-dir .
+2. Write in terminal: uvicorn api_info:ai --host 0.0.0.0 --port 8000 (Not necessary, only if you need fast work with database)
