@@ -1,7 +1,7 @@
 from sqlalchemy import Integer,String,Float,JSON,create_engine
 from sqlalchemy.orm import declarative_base,sessionmaker,Mapped,mapped_column
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
-s_engine = create_engine("postgresql+psycopg2://postgres:Auth-q09786@localhost:5432/usersdb", echo=False)
+s_engine = create_engine("postgresql+psycopg2://postgres:Password@localhost:localhost/databasename", echo=False)
 Base = declarative_base()
 class User(Base):
     __tablename__ = 'Users'
@@ -46,5 +46,6 @@ class Admin(Base):
     stars: Mapped[float] = mapped_column(Float)
     def __repr__(self):
         return f"<Admin(stars={self.stars})>"
-a_engine = create_async_engine("postgresql+asyncpg://postgres:Auth-q09786@localhost:5432/usersdb", echo=False)
+a_engine = create_async_engine("postgresql+asyncpg://postgres:Password@localhost:localhost/databasename", echo=False)
+
 Session = sessionmaker(a_engine,class_=AsyncSession,expire_on_commit=False)
