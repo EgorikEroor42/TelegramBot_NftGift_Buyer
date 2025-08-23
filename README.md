@@ -29,7 +29,7 @@ File: cho.b_hist_py.py – Creates buttons with a brief description of each user
 
 File: cho.b_call.py – All callbacks: profile creation, user profile list, changing profile status, changing the minimum quantity for NFT gift purchases, changing the maximum quantity for NFT gift purchases, changing the minimum price for NFT gift purchases, changing the maximum price for NFT gift purchases, topping up profile balance, deleting a profile, exiting a profile, topping up the user balance, detailed purchase information, user referral link and referral system message, changing language, and the logic for the “back” button.
 
-№ 3. How to launch:
+# 3. How to launch:
 
 1. Run impo.b_s.py
 
