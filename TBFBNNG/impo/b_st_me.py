@@ -5,7 +5,7 @@ from impo.u_db import User,Session
 from sqlalchemy import select
 from impo.b_dict import langs,keybos
 import redis.asyncio as redis
-bot = Bot('8384746324:AAH8oE1zThi7VFwc9A_z3S6r9w75dlM3po4')
+bot = Bot()
 dp = Dispatcher()
 def start_router(client:redis.Redis):
     router_start = Router()
@@ -47,4 +47,5 @@ def start_router(client:redis.Redis):
             await message.answer(langs[ul]['H'].format(us=us),reply_markup=keybos[ul]['M'])
             await state.clear()
             await client.delete('rig')
+
     return router_start
