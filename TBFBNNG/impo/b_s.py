@@ -22,11 +22,12 @@ async def main():
     dp = Dispatcher()
     asyncio.create_task(check_gift_list())
     asyncio.create_task(admin_fee())
-    client = redis.Redis(host='localhost', port=6379, db=0)
+    client = redis.Redis(host='localhost', port=port, db=databasename)
     dp.include_router(start_router(client))
     dp.include_router(call_router(client))
     dp.include_router(hist_pu_router(client))
     dp.include_router(list_prof_router(client))
     await dp.start_polling(bot)
 if __name__ == "__main__":
+
     asyncio.run(main())
