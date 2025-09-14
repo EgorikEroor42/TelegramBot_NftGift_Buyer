@@ -1,4 +1,4 @@
-# 1.TelegramBot_NftGift_Buyer
+# TelegramBot_NftGift_Buyer
 # 1. Data to be filled in:
 File: impo.b_st_me.py Line: 9 – Telegram bot token.
 
