@@ -5,7 +5,7 @@ from impo.b_st_me import start_router,bot
 from cho.b_call import call_router
 from cho.b_list_prof import list_prof_router
 from impo.b_g import check_gift_list
-from cho.b_hist_pu import hist_pu_router
+from cho.b_hist import hist_pu_router
 from aiogram import Dispatcher
 import redis.asyncio as redis
 async def admin_fee():
@@ -31,3 +31,4 @@ async def main():
 if __name__ == "__main__":
 
     asyncio.run(main())
+
